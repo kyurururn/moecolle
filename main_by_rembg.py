@@ -13,8 +13,8 @@ import math
 HEIGHT = 960
 WIDTH  = 1280
 LOCAL_FILEPATH = "capture.jpg"
-ACCESS_TOKEN = "sl.BprjhMrRiNA74anjsa4ELNWvZQXblwWpmUtl6rq8jHg0zVdm6RCPFAoI4vrZ3tr6G1QsfrBlm0hP6T5Yvaa2AVvyBFYf68kY8WiDQqMy_66vJ44iAgtWGOlhfdaM78cBrK_m-EtAuQ_UojuG9Md6peg"
-WEBHOOK_URL  = "https://discord.com/api/webhooks/1162070489485803520/hXcleujUQlRrgCuXSIfFO0QMiEw1Ta3EuFa9PUsp-DVC7PhTavc6AE-ZUkNPakrnUwx8"
+ACCESS_TOKEN = "<ACCESS_TOKEN>"
+WEBHOOK_URL  = "<WEBHOOK_URL>"
 
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH ,HEIGHT)

@@ -1,0 +1,8 @@
+opencv-python
+dropbox
+Pillow
+rembg
+qrcode
+requests
+numpy
+mediapipe

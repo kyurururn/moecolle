@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    </head>
+    <body>
+        <input id="pass" type="text" placeholder="パスワード">
+        <button onclick="answer()">実行</button>
+        <div id="quer" style="display:none;"></div>
+        <script>
+            const answer = () => {
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const paramValue = urlParams.get('id');
+
+                console.log(paramValue)
+
+
+                const url = "https://moeapitest.onrender.com/decrypt/";
+                const data = {
+                    password: document.getElementById("pass").value,
+                    encrypted_text: paramValue
+                };
+
+                // Fetch APIを使用してPOSTリクエストを送信
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .then(data => {
+                    console.log("Response:", data);
+                    window.location.href = data.decrypted_text;
+                })
+                .catch(error => console.error("Error:", error));
+            }
+        </script>
+    </body>
+</html>
